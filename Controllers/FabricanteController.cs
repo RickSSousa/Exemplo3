@@ -38,5 +38,33 @@ namespace Exemplo3.Controllers
             var fabricante = context.Fabricantes.FirstOrDefault(f => f.FabricanteID == id);
             return View(fabricante);
         }
+
+        public IActionResult Edit(int id)
+        {
+            var fabricante = context.Fabricantes.Find(id);
+            return View(fabricante);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Edit(Fabricante fabricante)
+        {
+            context.Entry(fabricante).State = EntityState.Modified;
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+        public IActionResult Delete(int id)
+        {
+            var fabricante = context.Fabricantes.FirstOrDefault(f => f.FabricanteID == id);
+            return View(fabricante);
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public IActionResult Delete(Fabricante fabricante)
+        {
+            context.Remove(fabricante);
+            context.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -445,3 +445,5 @@ C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debu
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Index.cshtml.g.cs
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Create.cshtml.g.cs
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Details.cshtml.g.cs
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Edit.cshtml.g.cs
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Delete.cshtml.g.cs
