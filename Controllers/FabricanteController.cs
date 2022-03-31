@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Exemplo3.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
 
 namespace Exemplo3.Controllers
 {
@@ -16,9 +17,9 @@ namespace Exemplo3.Controllers
         {
             context = ctx;
         }
-        public IActionResult Index()
+        public IActionResult Index(int pagina = 1)
         {
-            return View(context.Fabricantes);
+            return View(context.Fabricantes.ToPagedList(pagina, 3));
         }
         public IActionResult Create()
         {

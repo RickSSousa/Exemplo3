@@ -1,4 +1,5 @@
-﻿@model IEnumerable<Exemplo3.Models.Fabricante>
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Exemplo3.Models.Fabricante>
 
 @{
     ViewData["Title"] = "Index";
@@ -13,23 +14,27 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
             </th>
             <th></th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.FabricanteID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.FabricanteID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.FabricanteID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.FabricanteID">Edit</a> |
+                    <a asp-action="Details" asp-route-id="@item.FabricanteID">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.FabricanteID">Delete</a>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+<div>
+    @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
+</div>

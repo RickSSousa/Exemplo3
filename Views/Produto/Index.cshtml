@@ -1,4 +1,9 @@
-﻿@model IEnumerable<Exemplo3.Models.Produto>
+﻿@using X.PagedList.Mvc.Core
+@model X.PagedList.IPagedList<Exemplo3.Models.Produto>
+
+
+@*@model IEnumerable<Exemplo3.Models.Produto> - Não usará mais esse Ienumerable pois não queremos mais percorrer a lista de uma vez, e sim paginada conforme definimos*@
+
 
 @{
     ViewData["Title"] = "Lista de Produtos";
@@ -13,13 +18,14 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Nome)
+                Nome
+                @*@Html.DisplayNameFor(model => model.Nome) o pagedList não permite o uso do displaynamefor, apenas displayfor*@
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Preco)
+                Preco
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Fabricante)
+                Fabricante
             </th>
             <th></th>
         </tr>
@@ -45,3 +51,6 @@
 }
     </tbody>
 </table>
+<div>
+    @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
+</div>

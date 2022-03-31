@@ -447,3 +447,7 @@ C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debu
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Details.cshtml.g.cs
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Edit.cshtml.g.cs
 C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Razor\Views\Fabricante\Delete.cshtml.g.cs
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\bin\Debug\net5.0\JetBrains.Annotations.dll
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\bin\Debug\net5.0\X.PagedList.dll
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\bin\Debug\net5.0\X.PagedList.Mvc.Core.dll
+C:\Users\ricks\Desktop\5º Periodo\F. Desenvolvimento\Exemplo3\Exemplo3\obj\Debug\net5.0\Exemplo3.MvcApplicationPartsAssemblyInfo.cs

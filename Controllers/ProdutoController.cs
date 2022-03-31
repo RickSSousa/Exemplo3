@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using Exemplo3.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using X.PagedList;
 
 namespace Exemplo3.Controllers
 {
@@ -17,16 +18,17 @@ namespace Exemplo3.Controllers
         {
             context = ctx;
         }
-        public IActionResult Index()
+        public IActionResult Index(int pagina = 1) // aqui já definirá que a página será a 1, do pagedlist (paginação)
         {
-            return View(context.Produtos.Include(f => f.Fabricante)); //com o include, ele busca o nome dos fabricantes, carregando a associação 1 pra *
+            return View(context.Produtos.Include(f => f.Fabricante)//com o include, ele busca o nome dos fabricantes, carregando a associação 1 pra *
+                .ToPagedList(pagina, 3)); //aqui define a página que será chamada (já definida acima) e a quantidade de elementos por página
         }
 
         public IActionResult Create()
         {
             //viewbag serve como um obj q vai as informações q estão sendo solicitadas, nesse caso, está carregando em formato de lista o nome dos fabricantes em ordem alfabética
                                                                                           //rótulo e valor buscado no BD
-            ViewBag.Fabricante = new SelectList(context.Fabricantes.OrderBy(f => f.Nome), "FabricanteID", "Nome");
+            ViewBag.FabricanteID = new SelectList(context.Fabricantes.OrderBy(f => f.Nome), "FabricanteID", "Nome");
             return View();
         }
 
