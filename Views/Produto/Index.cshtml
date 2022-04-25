@@ -9,18 +9,51 @@
     ViewData["Title"] = "Lista de Produtos";
 }
 
-<h1>Lista de Produtos</h1>
+<h1>Produtos</h1>
 
 <p>
-    <a asp-action="Create">Adicionar Produto</a>
+    <button type="button" class="btn btn-outline-success">
+        <a asp-action="Create">Adicionar Produto</a>
+    </button>
+    
 </p>
-<table class="table">
+
+@foreach(var item in Model)
+            {
+                <div class="card card-header m-1 p-1">
+                    <div class="bg-transparent p-1">
+                        <h4>@item.Nome
+                            <span class="badge badge-pill badge-primary" style="float:right">
+                                <small>@item.Preco</small>
+                            </span>
+                            <span class="rounded-circle">
+                                <small>
+                                    <button type="button" class="btn btn-outline-info">
+                                        <a asp-action="Edit" asp-route-id="@item.ProdutoID">Editar</a>
+                                    </button>
+                                    
+                                    <button type="button" class="btn btn-outline-info">
+                                        <a asp-action="Details" asp-route-id="@item.ProdutoID">Detalhes</a>
+                                    </button>
+
+                                    <button type="button" class="btn btn-outline-danger" >
+                                        <a asp-action="Delete" asp-route-id="@item.ProdutoID" >Deletar</a>
+                                    </button>
+                                    
+                                </small>
+                            </span>
+                        </h4>
+                    </div>
+                </div>
+            }
+
+<!--<table class="table">
     <thead>
         <tr>
             <th>
-                Nome
+                Nome-->
                 @*@Html.DisplayNameFor(model => model.Nome) o pagedList não permite o uso do displaynamefor, apenas displayfor*@
-            </th>
+            <!--</th>
             <th>
                 Preco
             </th>
@@ -30,8 +63,8 @@
             <th></th>
         </tr>
     </thead>
-    <tbody>
-@foreach (var item in Model) {
+    <tbody>-->
+@*@foreach (var item in Model) {
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Nome)
@@ -48,9 +81,9 @@
                 <a asp-action="Delete" asp-route-id="@item.ProdutoID">Deletar</a>
             </td>
         </tr>
-}
-    </tbody>
-</table>
-<div>
+}*@
+    @*</tbody>
+</table>*@
+<div class="pagination">
     @Html.PagedListPager(Model, pagina => Url.Action("Index", new { pagina }))
 </div>
